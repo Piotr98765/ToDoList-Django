@@ -1,10 +1,10 @@
 from django.db import models
-from django.contrib.auth.models import User
+
 from django.db.models.fields import DateField
 from django.utils import timezone
 
 class Task(models.Model):
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=100, default='')
     created= models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
