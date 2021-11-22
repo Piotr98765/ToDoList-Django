@@ -1,6 +1,17 @@
 {% block content %} 
-
- <h5>Task is {{task.title}}</h5>
-  
-
+   <h2>Add Item</h2>
+   <form action="add_task/" method="post">
+       <input type="text" name="content">
+       <button type="submit">Submit</button>
+   </form>
+  <ul class="list">
+      {% for todo_item in todo_items %}
+         <li>{{ todo_item.title }}
+             <form action="delete_task/{{task_id}}/" action="post">
+             <button>Delete</button>
+             </form>
+         </li>
+      {% endfor %}
+  </ul>
+    
 {% endblock %}

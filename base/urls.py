@@ -1,9 +1,11 @@
 from django.urls import path
-from django.urls.resolvers import URLPattern
+
 
 
 from . import views
 
 urlpatterns=[
-    path('index/', views.index),
+    path('', views.index),
+    path('add_task/', views.add_task),
+    path('delete_task/<int:task_id/', views.delete_task)
 ]
