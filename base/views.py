@@ -21,8 +21,15 @@ def add_task(request):
     return HttpResponseRedirect("/")
 
 @csrf_exempt
-def delete_task(request, task_id):
-    Task.objects.get(id=task_id).delete()
+def delete_task(request, todo_item_id):
+    task = Task.objects.get(id=todo_item_id)
+    task.delete()
+    return HttpResponseRedirect("/")
+
+@csrf_exempt
+def clear(request):
+    todo_items=Task.objects.all()
+    todo_items.delete()
     return HttpResponseRedirect("/")
 
     

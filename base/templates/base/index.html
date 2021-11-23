@@ -1,4 +1,20 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        
+        <title>Todo List</title>
+        <link rel="stylesheet" href="{% static 'base/css/style.css' %}">
+    </head>
+
+
+
+<body>
 {% block content %} 
+<div class="container">
    <h2>Add Item</h2>
    <form action="add_task/" method="post">
        <input type="text" name="content">
@@ -7,11 +23,17 @@
   <ul class="list">
       {% for todo_item in todo_items %}
          <li>{{ todo_item.title }}
-             <form action="delete_task/{{task_id}}/" action="post">
+             <form action="delete_task/{{todo_item.id}}/" action="post">
              <button>Delete</button>
              </form>
          </li>
       {% endfor %}
   </ul>
-    
+  <form action="clear/" action="post">
+    <button>Clear All</button>
+  </form>
+</div>
+</body>
 {% endblock %}
+
+</html>

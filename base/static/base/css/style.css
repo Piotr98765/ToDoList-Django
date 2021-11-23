@@ -1,0 +1,21 @@
+body{
+    background-color: floralwhite;
+   
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    
+   
+}
+
+
+form{
+    align-items: flex-end;
+}
+
+.container{
+    max-width: 550px;
+    margin: auto;
+    
+}
+
