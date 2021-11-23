@@ -1,0 +1,34 @@
+{% load static %}
+<html>
+    <head>
+        <title>Lista zadań</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="{% static 'todolist/todolist.css' %}">    
+    </head>
+    <body>
+        <div>
+            <h1><a href="/">Lista zadań</a></h1>
+        </div>
+
+        <div class="tasks">
+        {% for task in tasks %}
+        <form>
+        {% if task.complete == True%}
+            <div class="todolist">
+                <p>{{task.title}} - Zrobione!</p>
+            </form>  
+            </div>
+        {% else %}
+            <div class="todolist">
+                <p>{{task.title}} - Niezrobione!</p> 
+            </div>
+        {% endif %}
+        {% endfor %}
+        </div>
+        
+        <a href="{% url 'delete-all'%}">Usuń wszystko</a>
+    </body>
+</html>
+
+
