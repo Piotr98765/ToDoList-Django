@@ -10,6 +10,7 @@
         <div>
             <h1><a href="/">Lista zadań</a></h1>
         </div>
+        
 
         <div class="tasks">
         {% for task in tasks %}
@@ -17,11 +18,14 @@
         {% if task.complete == True%}
             <div class="todolist">
                 <p>{{task.title}} - Zrobione!</p>
+                <a href="{% url 'delete' task.id %}">Usuń</a>                
             </form>  
             </div>
         {% else %}
             <div class="todolist">
-                <p>{{task.title}} - Niezrobione!</p> 
+                <p>{{task.title}} - Niezrobione!</p>
+                <a href="{% url 'change_to_done' task.id %}">Zrobione</a>
+                <a href="{% url 'delete' task.id %}">Usuń</a>
             </div>
         {% endif %}
         {% endfor %}

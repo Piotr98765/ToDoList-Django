@@ -12,3 +12,18 @@ def delete_all(request):
     tasks.delete()
     return redirect('/')
 
+def change_to_done(request, task):
+    y = Todo.objects.get(id= task)
+    y.complete = True
+    y.save()
+    return redirect('/')
+
+
+def delete(request, task):
+    y = Todo.objects.get(id= task)
+    y.delete()
+    return redirect('/')
+
+
+        
+
