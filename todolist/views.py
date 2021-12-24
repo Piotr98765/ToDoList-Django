@@ -24,6 +24,12 @@ def delete(request, task):
     y.delete()
     return redirect('/')
 
+def add(request):
+    x = request.POST['content']
+    new_item = Todo(title = x)
+    new_item.save()
+    return HttpResponseRedirect('/') 
+
 
         
 

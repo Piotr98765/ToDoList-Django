@@ -1,0 +1,15 @@
+* {
+    background-color: #fff;
+    text-align: center;
+}
+
+
+.main-page {
+    padding: 15px;
+}
+.delete-all a {
+    text-decoration: none;
+    color: red;
+}
+
+
